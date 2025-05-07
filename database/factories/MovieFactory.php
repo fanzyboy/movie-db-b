@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use illuminate\Support\Str;
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,8 +18,27 @@ class MovieFactory extends Factory
      */
     public function definition(): array
     {
+        $title = fake()->sentence(rand(3, 6));
+        $slug = Str::slug($title);
         return [
-            //
+            
+'title' => $title,
+
+'slug' => $slug,
+
+'synopsis' => fake()->paragraph (rand(5, 10)),
+
+'category_id' => Category:: inRandomOrder()->first(),
+
+'year' => fake()->year(),
+
+'actors' => fake()->name().'.'.fake('id')->name(),
+
+'cover_image' => 'https://picsum.photos/id/237/200/300'. Str::random(10) . '/480/640',
+
+'created_at' => now(),
+
+'updated_at' => now()
         ];
     }
 }
