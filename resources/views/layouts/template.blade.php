@@ -51,7 +51,7 @@
 </div>
 
 <div class="bg-success py-2 text-white text-center">
-    Copyright &copy; 2025 develope by nashwa
+    Copyright &copy; 2025 develope by ipan
 </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
