@@ -3,7 +3,7 @@
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 
 
 Route::get('/', [MovieController::class,'index']);
@@ -13,4 +13,7 @@ Route::post('/movie/store', [MovieController::class,'store'])->middleware('auth'
 Route::get('/login', [AuthController::class,'formLogin'])->name('login');
 Route::post('/login', [AuthController::class,'Login'])->name('login');
 
-
+Route::post('/logout', function () {
+    Auth::logout();
+    return redirect('/'); // arahkan ke homepage
+})->name('logout');
