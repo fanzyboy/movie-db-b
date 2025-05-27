@@ -23,20 +23,11 @@
             <li class="nav-item">
               <a class="nav-link" href="/movie/create">Input Movie</a>  
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            </li>
+            <li class="nav-item d-flex align-items-center text-white me-3">
+              <span class="nav-link text-white mb-0">Hello, {{ auth()->user()->name }}</span>
+          </li>
+          
           </ul>
 
           {{-- Search Bar --}}
@@ -51,6 +42,8 @@
               @csrf
               <button type="submit" class="btn btn-outline-light">Logout</button>
             </form>
+          
+            </div>
           @else
             <a href="{{ route('login') }}" class="btn btn-light">Login</a>
           @endauth
@@ -66,6 +59,13 @@
     <div class="bg-success py-2 text-white text-center">
         Copyright &copy; 2025 develope by ipan
     </div>
+    @if (session('status'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('status') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
   </body>

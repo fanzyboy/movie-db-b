@@ -15,5 +15,5 @@ Route::post('/login', [AuthController::class,'Login'])->name('login');
 
 Route::post('/logout', function () {
     Auth::logout();
-    return redirect('/'); // arahkan ke homepage
+    return redirect('/login'); // arahkan ke homepage
 })->name('logout');
