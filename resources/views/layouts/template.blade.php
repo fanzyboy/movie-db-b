@@ -25,7 +25,10 @@
             </li>
             </li>
             <li class="nav-item d-flex align-items-center text-white me-3">
-              <span class="nav-link text-white mb-0">Hello, {{ auth()->user()->name }}</span>
+              <span class="nav-link text-white mb-0">
+                Hello, {{ auth()->check() ? auth()->user()->name : 'Guest' }}
+            </span>
+            
           </li>
           
           </ul>

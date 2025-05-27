@@ -13,6 +13,7 @@ Route::post('/movie/store', [MovieController::class,'store'])->middleware('auth'
 Route::get('/login', [AuthController::class,'formLogin'])->name('login');
 Route::post('/login', [AuthController::class,'Login'])->name('login');
 
+
 Route::post('/logout', function () {
     Auth::logout();
     return redirect('/login'); // arahkan ke homepage
