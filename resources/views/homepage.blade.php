@@ -20,7 +20,7 @@
         <h5 class="card-title">{{$movie->title}}</h5>
         <p class="card-text">{{Str::words($movie->synopsis, 15)}}</p>
         <p class="card-text"><small class="text-body-secondary">Year: {{$movie->year}}</small></p>
-        <a href="/movie/{{ $movie->id }}/{{ $movie->slug }}"class="btn btn-success">Read More </a>
+        <a href="/movie/{{ $movie->id }}/{{ $movie->slug }}"class="btn btn-dark">Read More </a>
       </div>
     </div>
     </div>

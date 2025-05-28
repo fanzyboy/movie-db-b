@@ -21,7 +21,7 @@
         <p class="card-text">Actors : {{$movie->actors}}</p>
         <p class="card-text">Category : {{$movie->category->category_name}}</p>
         <p class="card-text"><small class="text-body-secondary">Year: {{$movie->year}}</small></p>
-        <a href="/"class="btn btn-success">Back</a>
+        <a href="/"class="btn btn-dark">Back</a>
       </div>
     </div>
     </div>
